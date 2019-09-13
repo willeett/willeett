@@ -1,11 +1,29 @@
-# -*- coding: utf-8 -*-
+# Import required libraries
+import os
+from random import randint
+
+import plotly.plotly as py
+from plotly.graph_objs import *
+
+import flask
 import dash
+from dash.dependencies import Input, Output, State, Event
 import dash_core_components as dcc
 import dash_html_components as html
 
+
+# Setup the app
+# Make sure not to change this file name or the variable names below,
+# the template is configured to execute 'server' on 'app.py'
+server = flask.Flask(willeett)
+server.secret_key = os.environ.get('secret_key', str(randint(0, 1000000)))
+app = dash.Dash(willeett, server=server)
+
+# -*- coding: utf-8 -*-
+
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
-app = dash.Dash(willeett, external_stylesheets=external_stylesheets)
+# Put your Dash code here
 
 app.layout = html.Div(children=[
     html.H1(children='Hello Dash'),
@@ -28,5 +46,7 @@ app.layout = html.Div(children=[
     )
 ])
 
+
+# Run the Dash app
 if willeett == '__main__':
-    app.run_server(debug=True)
+    app.server.run(debug=True, threaded=True)

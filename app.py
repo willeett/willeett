@@ -15,9 +15,9 @@ import dash_html_components as html
 # Setup the app
 # Make sure not to change this file name or the variable names below,
 # the template is configured to execute 'server' on 'app.py'
-server = flask.Flask(willeett)
+server = flask.Flask(app.py)
 server.secret_key = os.environ.get('secret_key', str(randint(0, 1000000)))
-app = dash.Dash(willeett, server=server)
+app = dash.Dash(app.py, server=server)
 
 # -*- coding: utf-8 -*-
 
@@ -48,5 +48,5 @@ app.layout = html.Div(children=[
 
 
 # Run the Dash app
-if willeett == '__main__':
+if app.py == '__main__':
     app.server.run(debug=True, threaded=True)

@@ -19,10 +19,6 @@ server = flask.Flask(app.py)
 server.secret_key = os.environ.get('secret_key', str(randint(0, 1000000)))
 app = dash.Dash(app.py, server=server)
 
-# -*- coding: utf-8 -*-
-
-external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
-
 # Put your Dash code here
 
 app.layout = html.Div(children=[
@@ -48,5 +44,5 @@ app.layout = html.Div(children=[
 
 
 # Run the Dash app
-if app.py == '__main__':
+if app.py == 'willeett':
     app.server.run(debug=True, threaded=True)

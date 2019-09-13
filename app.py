@@ -44,5 +44,5 @@ app.layout = html.Div(children=[
 
 
 # Run the Dash app
-if app.py == 'willeett':
+if app.py == '__main__':
     app.server.run(debug=True, threaded=True)
